@@ -1,0 +1,143 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header{
+  width: 100vw;
+  height: 70px;
+  background-color: #E5E4E2;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-content: center;
+}
+
+.head-1 i{
+  position: absolute;
+  left: 20px;
+  top: 25px;
+  font-size: 20px;
+}
+
+.head-2{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.head-2 img{
+  width: 70px;
+  margin-right: 30px;
+}
+
+.head-3{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.head-3 nav{
+  
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-content: space-between;
+  gap: 20px;
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+.head-3 nav a{
+  text-decoration: none;
+  color: black;
+}
+
+.bi-house-door{
+  color:brown;
+}
+
+.bi-rocket-takeoff{
+  color: rgb(222, 137, 72);
+}
+
+.bi-cpu{
+  color: #C0C0C0;
+}
+
+.bi-file-earmark-person-fill{
+  color: blueviolet;
+}
+
+.bi-chat{
+  color: rgb(43, 116, 43);
+}
+
+#home{
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+  justify-content: center;
+  background-color: #E5E4E2;
+}
+
+#home img{
+  width: 400px;
+  height: 400px;
+  border-radius: 200px;
+  border: 2px solid ;
+  box-shadow: 0 0 10px 5px #eed196;
+  animation: float 3s ease-in-out infinite;
+  margin-left: 150px;
+}
+
+#home img:hover{
+  animation-play-state: paused;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.head-info{
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-right: 200px;
+}
+
+.head-info h1{
+  font-size: 2.1em;
+  color: #7a663c;
+  text-shadow: 
+   0 0 10px #7a663c;
+   animation: wave 5s ease-in-out infinite;
+}
+
+@keyframes wave{
+  0%{
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(-10px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+
+.head-info p{
+  font-family:'Times New Roman', Times, serif;
+}
+
+
