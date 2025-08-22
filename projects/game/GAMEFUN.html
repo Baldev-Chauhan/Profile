@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      text-align: center;
+    }
+
+    button{
+      height: 100px;
+      width: 100px;
+      background-color:#fff;
+      border:none;
+      margin: 10px;
+      border-radius: 1000px;
+      cursor: pointer;
+    }
+    img{
+      height: 75px;
+      background-color:gray;
+      border: none;
+      border-radius: 1000px;
+
+    }
+    #Reset{
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 1000px;
+    }
+  </style>
+</head>
+<body>
+  
+  <h1>Bat Ball Stump Game</h1>
+   
+  <button  onclick="getresult()"><img src="bat.png" alt=""></button>
+
+  <button  onclick="getresult()"><img  src="ball.png" alt="ball"></button>
+
+  <button  onclick="getresult()"><img  src="stump.png" alt="stump"></button>
+   
+
+  <h2 id="fool"></h2>
+  <h2 id="fool2"></h2>
+  <button id="Reset" onclick="localStorage.clear(); resetscore()">Reset</button>
+
+  <script>
+    let scorestr = localStorage.getItem('score');
+    let score;
+    resetscore();
+
+    function resetscore(scorestr){
+      score =  {
+        win : 0,
+        lose : 0,
+        tie : 0
+      }
+    }
+
+    function getresult() {
+  // Generate random number from 1 to 8
+  const rand = Math.floor(Math.random() * 9); 
+
+  let comchoice;
+  if (rand > 0 && rand <= 3) {
+    comchoice = 'Bat';
+  } else if (rand > 3 && rand <= 6) {
+    comchoice = 'Ball';
+  } else {
+    comchoice = 'Stump';
+  }
+
+  // Determine result and update score
+  if (comchoice === 'Ball') {
+    score.win++;
+    document.getElementById('fool').innerText = 'Computer choice is Ball, you win';
+  } else if (comchoice === 'Bat') {
+    score.tie++;
+    document.getElementById('fool').innerText = 'Computer choice is Bat, game tie';
+  } else {
+    score.lose++;
+    document.getElementById('fool').innerText = 'Computer choice is Stump, you lose';
+  }
+
+  // Save and display score
+  localStorage.setItem('score', JSON.stringify(score));
+  document.getElementById('fool2').innerText = `win:${score.win}, lose:${score.lose}, tie:${score.tie}`;
+}
+
+// Step 2: Update the display
+document.getElementById('fool2').innerText =
+  `win: ${score.win}, lose: ${score.lose}, tie: ${score.tie}`;
+
+  </script>
+  
+</body>
+</html>

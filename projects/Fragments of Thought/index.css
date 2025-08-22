@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: black;
+}
+
+/* Container */
+.outer {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+/* Text Section */
+.text {
+  flex: 1 1 300px;
+  text-align: center;
+  padding: 1rem;
+}
+
+.text h1 {
+  font-size: clamp(1.8rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+}
+
+.text p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  opacity: 0.85;
+}
+
+/* Image Grid */
+.image {
+  display: grid;
+  grid-template-columns: repeat(3 , 1fr );
+  gap: 1rem;
+  flex: 1 1 400px;
+  max-width: 700px;
+}
+
+/* Boxes */
+.box {
+  background-size: cover;
+  background-position: bottom;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 1s ease-in-out, box-shadow 0.4s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1rem;
+  background-color: #666;
+  background-blend-mode: soft-light;
+}
+
+.box:hover {
+  background-position: center;
+  background-size: cover;
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(255, 255, 255, 0.2);
+  background-color: #999;
+  background-blend-mode: overlay;
+}
+
+/* Optional Box Variants (adjust grid spans if needed) */
+#box1 {
+  grid-row: span 2;
+  height: 200px;
+}
+#box2 {
+  grid-column: span 2;
+}
+#box4 {
+  grid-row: span 2;
+}
+#box5 {
+  grid-column: span 2;
+  height: 100px;
+}
+#box6{
+  height: 100px;
+}
+#box7 {
+  grid-column: span 2;
+}
+
+/* Media Queries for smaller tweaks */
+@media (max-width: 600px) {
+  .image {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  }
+  .box {
+    font-size: 0.9rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #121212;
+    color: white;
+  }
+}
+
+
+
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      text-align: center;
+    }
+    button{
+      font-size: 20px;
+      height: 40px;
+      width: 40px;
+      cursor: pointer;
+      border-radius: 1000px;
+      border: none;
+    }
+    .js-odd{
+      background-color: red;
+    }
+    .js-even{
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="result"></h1>
+
+  <button id="button" onclick="clicked()">0</button>
+
+  <script>
+    let number = localStorage.getItem('number') || 0;
+    function clicked()
+    {
+      number++;
+      localStorage.setItem('number',number);
+      update();
+    }
+
+    function update()
+    {
+      let button = document.getElementById('button');
+      if(number%2 === 0){
+        button.classList.remove('js-odd');
+        button.classList.add('js-even');
+      }
+      else{
+        
+        button.classList.remove('js-even');
+        button.classList.add('js-odd');
+      }
+      button.innerText = number;
+    }
+
+    update();
+
+    function greet(person = 'Dear'){
+    let myDate = new Date();
+    let hours = myDate.getHours();
+    let heading = document.getElementById('result');
+    if(hours>5 && hours<12){
+      heading.innerText = `good morning ${person}`;
+    }
+    else if (hours>12 && hours<18){
+      heading.innerText = `good afternoon ${person}`;
+    }
+    else{
+      heading.innerText = `good night ${person}`;
+    }
+  }
+
+  greet();
+  </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shopping Cart</title>
+  <link rel="stylesheet" href="stlyle.css">
+  <style>
+    
+.bag-button, .wishlist-button {
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 16px;
+      border-radius: 8px;
+      background-color: rgb(29, 29, 150);
+      border: 2px solid rgb(29, 29, 150);
+      color: azure;
+      
+    }
+
+    body{
+      background-image: url(images.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      backdrop-filter: blur(8px);
+      background-color: rgba(255,255,255,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <button class="bag-button" onclick="addToBag()">Add to Bag</button>
+  <button class="wishlist-button" onclick="addToWishlist()">Add to ❤️ Wishlist</button>
+  <button class="bag-button" onclick="addSaleItems()">Add 1+1 Sale Items</button>
+
+  <br><br>
+
+  <h1 id="cart"></h1>
+  <h2 id="cart2"></h2>
+  <h3 id="name"></h3>
+
+  <script>
+    
+
+    let carts = 0;
+    let carts2 = 0;
+
+    let item1 = 1200;
+    let discount = 20; // percent
+    let coupon = (discount / 100) * item1;
+
+    let packaging = 20;
+    let delivery = 25;
+
+    function updateCartDisplay() {
+      document.querySelector('#cart').innerText = `Your bag has ${carts} items.`;
+      document.querySelector('#cart2').innerText = `Wishlist has ${carts2} items.`;
+    }
+
+    function calculateTotal() {
+      let cartsValue = Math.round((item1 - coupon) + packaging + delivery);
+      let total = Math.round(cartsValue + (cartsValue * 0.18)); // 18% tax
+      const myName = 'Baldev';
+      document.querySelector('#name').innerText = `My name is ${myName}, and the total payable amount is ₹${total}.`;
+    }
+
+    function addToBag() {
+      carts++;
+      updateCartDisplay();
+      calculateTotal();
+    }
+
+    function addToWishlist() {
+      if (carts > 0) carts--;
+      carts2++;
+      updateCartDisplay();
+      calculateTotal();
+    }
+
+    function addSaleItems() {
+      carts += 2;
+      updateCartDisplay();
+      calculateTotal();
+    }
+
+    // Initial display
+    updateCartDisplay();
+    calculateTotal();
+
+    
+  </script>
+
+</body>
+</html>
