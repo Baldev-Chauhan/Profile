@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #fff;
+  padding: 20px;
+}
+
+#container {
+  position: relative;
+  border: 2px solid #fbabe75e;
+  border-radius: 38px;
+  background-color: #fbabe78f;
+  box-shadow: 0 0 20px 2px #fbabe78f;
+  padding: 20px;
+  width: 100%;
+  max-width: 440px;
+}
+
+#display {
+  border-radius: 20px;
+  width: 100%;
+  height: 60px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  text-align: right;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+  color: black;
+  border: 10px solid rgba(244, 244, 244, 0.395);
+  background-color: rgba(195, 192, 192, 0.962);
+  padding: 0 10px;
+}
+
+input::placeholder {
+  color: black;
+}
+
+#button-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  width: 100%;
+  color: black;
+  border-radius: 25px;
+  justify-items: center;
+  background-color: #fbabe7e2;
+  border: 2px solid #f6bde85e;
+  padding: 15px;
+}
+
+.display {
+  grid-column: span 4;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+button {
+  border-radius: 50%;
+  border: 3px solid #f790ddf8;
+  background-color: #fbabe75e;
+  width: 60px;
+  height: 60px;
+  font-size: clamp(1.2rem, 2vw, 2rem);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  background-color: #fdd0f2;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  #container {
+    max-width: 80%;
+  }
+
+  #display {
+    font-size: 24px;
+    height: 55px;
+  }
+
+  button {
+    width: 55px;
+    height: 55px;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #button-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 10px;
+  }
+
+  #display {
+    font-size: 20px;
+    height: 50px;
+  }
+
+  button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 350px) {
+  button {
+    width: 35px;
+    height: 35px;
+    font-size: 1rem;
+  }
+
+  #display {
+    font-size: 18px;
+  }
+}
+
