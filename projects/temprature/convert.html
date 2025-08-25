@@ -5,77 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>convert</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
-    body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin:0;
-    height: 100vh;
-    gap: 30PX;
-    background-color: black;
-    }
-    #input{
-      height: 50px;
-      width: 130px;
-      text-align: center;
-      border: none;
-      border-radius: 1000px;
-      font-weight: bold;
-      font-size: 15px;
-      background-color: #fff;
-    }
-    #output{
-      
-      height: 50px;
-      width: 130px;
-      text-align: center;
-      border: none;
-      border-radius: 1000px;
-      font-weight: bold;
-      font-size: 15px;
-      background-color: #fff;
-    }
-    button{
-      height: 50px;
-      width: 50px;
-      border-radius: 1000px;
-      border: none;
-      background-color: #fff;
-    }
-
-    h1{
-      border:2px solid orange;
-      color:#fff;
-      border-radius: 1000px;
-      height: 50px;
-      width: 320px;
-      text-align: center;
-      padding: 20px;
-      margin: 10px;
-    }
-    
-    
-
-  </style>
+  <link rel="stylesheet" href="convert.css">
 </head>
+
+
 <body>
-  <h1>°F = °C × 9/5 + 32 </h1>
-  <div id="container">
-    <input type="number" id="input" placeholder="Celsius">
-    <button id="convert" onclick="convert()"><i class="fa-solid fa-arrow-right"></i></button>
-    <input type="number" id="output" placeholder="Fahrenheit">
+  <div class="container">
+  <h1>Convert Temperature</h1>
+  <div id="container-inner">
+            <div id="input">
+            <p>From : <select name="units" id="units">
+                <option value="celsius">Celsius</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="Kelvin">Kelvin</option>
+            </select></p>
+            
+            <p>To : <select name="units" id="units">
+                <option value="celsius">Celsius</option>
+                <option value="fahrenheit">Fahrenheit</option>
+                <option value="Kelvin">Kelvin</option>
+            </select></p>
+            
+            <p id="input-value"> Value of : <input type="number"></p>
+        </div>
+
+        <div id="button">
+        <input type="button" value="Clear">
+        <input type="button" value="Calculate">
+        </div>
+
+        <div id="result">
+          <input type="text" placeholder="Answer : " readonly>
+        </div>
+  </div>
   </div>
 
-  <script>
-    let celsius ;
-    let fahrenheit;
-    function convert(){
-      celsius=Number(document.getElementById('input').value);
-      fahrenheit = celsius * 9/5 + 32;
-      document.getElementById('output').value = fahrenheit;
-    }
-  </script>
+  <script src="convert.js"></script>
 </body>
 </html>
