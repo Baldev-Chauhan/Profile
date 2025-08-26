@@ -14,28 +14,28 @@
   <h1>Convert Temperature</h1>
   <div id="container-inner">
             <div id="input">
-            <p>From : <select name="units" id="units">
-                <option value="celsius">Celsius</option>
-                <option value="fahrenheit">Fahrenheit</option>
-                <option value="Kelvin">Kelvin</option>
+            <p>From : <select name="unit1" id="unit1">
+                <option value="celsius">Celsius (°C)</option>
+                <option value="fahrenheit">Fahrenheit (°F)</option>
+                <option value="Kelvin">Kelvin (K)</option>
             </select></p>
             
-            <p>To : <select name="units" id="units">
-                <option value="celsius">Celsius</option>
-                <option value="fahrenheit">Fahrenheit</option>
-                <option value="Kelvin">Kelvin</option>
+            <p>To : <select name="unit2" id="unit2">
+                <option value="celsius">Celsius (°C)</option>
+                <option value="fahrenheit">Fahrenheit (°F)</option>
+                <option value="Kelvin">Kelvin (K)</option>
             </select></p>
             
-            <p id="input-value"> Value of : <input type="number"></p>
+            <p> Value of : <input type="number" id="input-value"></p>
         </div>
 
         <div id="button">
-        <input type="button" value="Clear">
-        <input type="button" value="Calculate">
+        <input type="button" value="Clear" onclick="clearInput()">
+        <input type="button" value="Calculate" onclick="convert()">
         </div>
 
         <div id="result">
-          <input type="text" placeholder="Answer : " readonly>
+          <textarea name="result" id="value" placeholder="Answer" readonly rows="5"></textarea>
         </div>
   </div>
   </div>
