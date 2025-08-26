@@ -46,7 +46,7 @@
     let carts2 = 0;
 
     let item1 = 1200;
-    let discount = 20; // percent
+    let discount = 20; 
     let coupon = (discount / 100) * item1;
 
     let packaging = 20;
@@ -59,7 +59,7 @@
 
     function calculateTotal() {
       let cartsValue = Math.round((item1 - coupon) + packaging + delivery);
-      let total = Math.round(cartsValue + (cartsValue * 0.18)); // 18% tax
+      let total = Math.round(cartsValue + (cartsValue * 0.18));
       const myName = 'Baldev';
       document.querySelector('#name').innerText = `My name is ${myName}, and the total payable amount is ₹${total}.`;
     }
@@ -83,7 +83,6 @@
       calculateTotal();
     }
 
-    // Initial display
     updateCartDisplay();
     calculateTotal();
 
